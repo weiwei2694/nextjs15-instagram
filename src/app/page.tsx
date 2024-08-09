@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Sidebar from "@/components/sidebar";
 
-export default function Home() {
+const Page = () => {
   return (
-    <div>
-      <h1>Main Page</h1>
-    </div>
+    <main className="flex">
+      <Sidebar />
+      <div>Main</div>
+      <div>Side Right</div>
+    </main>
   );
-}
+};
+
+export default Page;
