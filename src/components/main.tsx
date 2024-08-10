@@ -1,4 +1,5 @@
 import { profiles } from "@/data";
+import TimeAgo from "./ui/time-ago";
 
 const Main = () => {
   return (
@@ -18,7 +19,9 @@ const Main = () => {
         </ul>
 
         {/* Pages */}
-        <div className="flex flex-col items-center"></div>
+        <div className="flex flex-col items-center">
+          <TimeAgo date="2024-08-08T14:00:00Z" />
+        </div>
       </div>
     </section>
   );
