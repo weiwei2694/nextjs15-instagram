@@ -58,3 +58,26 @@ export const sidebarLists: TSidebarList[] = [
     img: "/profile.jpg",
   },
 ];
+
+export const profiles = [
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+  "/profile.jpg",
+];
