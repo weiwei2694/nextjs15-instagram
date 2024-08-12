@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-row items-center gap-x-3">
-          <form>
+          <form className="max-[460px]:hidden">
             <div className="relative bg-[#363636] rounded-lg">
               <input
                 type="text"
