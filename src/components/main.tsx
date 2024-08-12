@@ -11,6 +11,7 @@ import {
   Smile,
 } from "lucide-react";
 import React from "react";
+import Stories from "./stories";
 
 const Main = () => {
   const [text, setText] = React.useState<string>("");
@@ -29,23 +30,9 @@ const Main = () => {
   };
 
   return (
-    <section className="w-full max-w-2xl py-6 mx-auto">
+    <section className="w-full max-w-2xl pb-6 mx-auto">
       <div className="flex flex-col space-y-3">
-        {/* Story */}
-        <ul className="w-full flex flex-row gap-x-3 items-center px-3 overflow-hidden whitespace-nowrap">
-          {profiles.map((profile, profileIndex) => (
-            <li
-              key={profileIndex}
-              className="shrink-0 relative p-[2px] rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 cursor-pointer"
-            >
-              <img
-                src={profile}
-                alt={profile + profileIndex}
-                className="w-[60px] h-[60px] object-cover rounded-full bg-black p-px select-none"
-              />
-            </li>
-          ))}
-        </ul>
+        <Stories />
 
         {/* Pages */}
         <div className="w-full max-w-[450px] mx-auto">
