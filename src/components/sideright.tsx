@@ -1,4 +1,4 @@
-import { profiles } from "@/data";
+import { profiles, siderightFooterLists } from "@/data";
 
 const Sideright = () => {
   return (
@@ -69,6 +69,27 @@ const Sideright = () => {
           })}
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="mt-10">
+        <div className="flex flex-col space-y-4">
+          <ul className="flex flex-row flex-wrap gap-x-1">
+            {siderightFooterLists.map((list, listIndex) => (
+              <li
+                key={list}
+                className="cursor-pointer hover:underline text-[#737373] text-xs"
+              >
+                {list}
+                {listIndex !== siderightFooterLists.length - 1 ? "," : ""}
+              </li>
+            ))}
+          </ul>
+
+          <h6 className="text-[#737373] text-xs uppercase">
+            &copy; 2024 Instagram from Meta
+          </h6>
+        </div>
+      </footer>
     </aside>
   );
 };

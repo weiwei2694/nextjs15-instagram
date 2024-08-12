@@ -81,3 +81,15 @@ export const profiles = [
   "/profile.jpg",
   "/profile.jpg",
 ];
+
+export const siderightFooterLists = [
+  "About",
+  "Help",
+  "API",
+  "Jobs",
+  "Privacy",
+  "Terms",
+  "Locations",
+  "Language",
+  "Meta Verified",
+];
