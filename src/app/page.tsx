@@ -9,7 +9,7 @@ const Page = () => {
       {/* max-md:hidden */}
       <Sidebar />
 
-      <div className="w-full md:max-w-7xl mx-auto flex flex-col md:flex-row">
+      <div className="max-md:w-full md:max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* max-md:block/inline */}
         <Navbar />
 
