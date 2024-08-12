@@ -1,12 +1,16 @@
 import Main from "@/components/main";
 import Sidebar from "@/components/sidebar";
+import Sideright from "@/components/sideright";
 
 const Page = () => {
   return (
     <main className="min-h-screen flex">
       <Sidebar />
-      <Main />
-      <div>Side Right</div>
+
+      <div className="max-w-7xl mx-auto flex">
+        <Main />
+        <Sideright />
+      </div>
     </main>
   );
 };
