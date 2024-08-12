@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 
 const Sidebar = () => {
   return (
-    <aside className="sticky top-0 max-xl:w-fit xl:w-[330px] border-r border-gray-200/20 h-screen py-8 px-4 max-xl:py-4">
+    <aside className="sticky top-0 max-xl:w-fit xl:w-[270px] max-md:hidden border-r border-gray-200/20 h-screen py-8 px-4 max-xl:py-4">
       <div className="flex flex-col h-full justify-between">
         <div className="flex flex-col space-y-8">
           <div className="px-4 py-3 rounded-xl max-xl:hover:bg-gray-200/10 transition cursor-pointer max-xl:px-3 max-xl:py-2 max-xl:grid max-xl:place-items-center group">
