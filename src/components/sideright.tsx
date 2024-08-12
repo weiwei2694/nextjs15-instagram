@@ -2,7 +2,7 @@ import { profiles, siderightFooterLists } from "@/data";
 
 const Sideright = () => {
   return (
-    <aside className="ps-16 py-8 max-xl:py-4 w-full max-w-[319px]">
+    <aside className="max-[1160px]:hidden ps-16 pt-8 w-[319px]">
       <div className="flex flex-col space-y-6">
         {/* switch account */}
         <div className="flex flex-row items-center justify-between w-full">
