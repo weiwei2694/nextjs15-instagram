@@ -1,18 +1,20 @@
+import type { LucideProps } from "lucide-react";
 import {
-  MdHomeFilled,
-  MdOutlineExplore,
-  MdSearch,
-  MdOutlineSlowMotionVideo,
-  MdOutlineMessage,
-  MdOutlineCreate,
-} from "react-icons/md";
-import type { IconType } from "react-icons";
-import { IoMdHeartEmpty } from "react-icons/io";
+  BadgePlus,
+  Film,
+  Heart,
+  House,
+  MessageCircle,
+  Search,
+  Telescope,
+} from "lucide-react";
 
-type TSidebarList = {
+export type TSidebarList = {
   title: string;
   active: boolean;
-  icon?: IconType;
+  icon?: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
   img?: string;
 };
 
@@ -20,37 +22,37 @@ export const sidebarLists: TSidebarList[] = [
   {
     title: "Home",
     active: true,
-    icon: MdHomeFilled,
+    icon: House,
   },
   {
     title: "Search",
     active: false,
-    icon: MdSearch,
+    icon: Search,
   },
   {
     title: "Explore",
     active: false,
-    icon: MdOutlineExplore,
+    icon: Telescope,
   },
   {
     title: "Reels",
     active: false,
-    icon: MdOutlineSlowMotionVideo,
+    icon: Film,
   },
   {
     title: "Messages",
     active: false,
-    icon: MdOutlineMessage,
+    icon: MessageCircle,
   },
   {
     title: "Notifications",
     active: false,
-    icon: IoMdHeartEmpty,
+    icon: Heart,
   },
   {
     title: "Create",
     active: false,
-    icon: MdOutlineCreate,
+    icon: BadgePlus,
   },
   {
     title: "Profile",

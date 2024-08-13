@@ -1,14 +1,18 @@
-import { sidebarLists } from "@/data";
-import { FaInstagram, FaThreads } from "react-icons/fa6";
-import { FiMenu } from "react-icons/fi";
+import { sidebarLists, TSidebarList } from "@/data";
+import { FaThreads } from "react-icons/fa6";
+import { Instagram, Menu } from "lucide-react";
+import { IoMdHome } from "react-icons/io";
 
 const Sidebar = () => {
   return (
-    <aside className="sticky top-0 max-xl:w-fit xl:w-[270px] max-md:hidden border-r border-gray-200/20 h-screen py-8 px-4 max-xl:py-4">
+    <aside className="sticky top-0 w-[72px] xl:w-[244px] 2xl:w-[335px] max-md:hidden border-r border-gray-200/20 h-screen pb-5 pt-2 px-3">
       <div className="flex flex-col h-full justify-between">
-        <div className="flex flex-col space-y-8">
-          <div className="px-4 py-3 rounded-xl max-xl:hover:bg-gray-200/10 transition cursor-pointer max-xl:px-3 max-xl:py-2 max-xl:grid max-xl:place-items-center group">
-            <a href="#">
+        <div className="flex flex-col">
+          <div className="relative mb-[19px] xl:pb-4 xl:px-3 xl:pt-[25px] max-xl:pb-[23px] max-xl:h-[92px]">
+            <a
+              href="#"
+              className="max-xl:absolute max-xl:top-1/2 max-xl:left-1/2 max-xl:-translate-y-1/2 max-xl:-translate-x-1/2 max-xl:p-3 max-xl:hover:bg-gray-200/10 max-xl:rounded-lg group"
+            >
               <img
                 src="/text-logo.png"
                 alt="instagram"
@@ -16,36 +20,29 @@ const Sidebar = () => {
                 className="max-xl:hidden pointer-events-none"
               />
 
-              <FaInstagram
-                size="2rem"
-                className="xl:hidden max-xl:w-[1.5rem] max-xl:group-hover:scale-105 transition duration-75 pointer-events-none"
-              />
+              <Instagram className="xl:hidden max-xl:group-hover:scale-105 max-xl:transition max-xl:duration-200" />
             </a>
           </div>
 
-          <ul className="flex flex-col space-y-2">
+          <ul className="flex flex-col max-xl:space-y-4">
             {sidebarLists.map((list, listIndex) => (
               <li
                 key={listIndex}
-                className="flex items-center max-xl:justify-center gap-x-3 px-4 py-3 rounded-xl hover:bg-gray-200/10 cursor-pointer transition group max-xl:px-1 max-xl:py-2"
+                className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group"
               >
-                {list.icon && (
-                  <list.icon
-                    size="2rem"
-                    className="max-xl:w-[1.7rem] max-xl:group-hover:scale-[1.1] transition duration-75"
-                  />
-                )}
+                <DisplayIcon list={list} />
+
                 {list.img && (
                   <img
                     src={list.img}
                     alt="profile"
-                    className="w-[2rem] h-[2rem] object-cover rounded-full max-xl:w-[1.7rem] max-xl:h-[1.7rem] max-xl:group-hover:scale-[1.1] transition duration-75"
+                    className="object-cover rounded-full xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:rounded-full max-xl:group-hover:scale-105 max-xl:transition max-xl:duration-75"
                   />
                 )}
                 <span
-                  className={`max-xl:hidden ${
+                  className={`max-xl:hidden text-base ${
                     list.active ? "font-bold" : "font-light"
-                  }`}
+                  } ${list.title === "Home" ? "-translate-x-[2.8px]" : ""}`}
                 >
                   {list.title}
                 </span>
@@ -55,24 +52,30 @@ const Sidebar = () => {
         </div>
 
         <ul className="flex flex-col space-y-2">
-          <li className="flex items-center max-xl:justify-center gap-x-3 px-4 py-3 rounded-xl hover:bg-gray-200/10 cursor-pointer transition group max-xl:px-1 max-xl:py-2">
-            <FaThreads
-              size="1.8rem"
-              className="max-xl:w-[1.7rem] max-xl:group-hover:scale-[1.1] transition duration-75"
-            />
-            <span className="max-xl:hidden font-light">Threads</span>
+          <li className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group">
+            <FaThreads className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
+            <span className="max-xl:hidden text-base font-light">Threads</span>
           </li>
-          <li className="flex items-center max-xl:justify-center gap-x-3 px-4 py-3 rounded-xl hover:bg-gray-200/10 cursor-pointer transition group max-xl:px-1 max-xl:py-2">
-            <FiMenu
-              size="1.8rem"
-              className="max-xl:w-[1.7rem] max-xl:group-hover:scale-[1.1] transition duration-75"
-            />
-            <span className="max-xl:hidden font-light">More</span>
+          <li className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group">
+            <Menu className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
+            <span className="max-xl:hidden text-base font-light">More</span>
           </li>
         </ul>
       </div>
     </aside>
   );
 };
+
+const DisplayIcon = ({ list }: { list: TSidebarList }) => (
+  <>
+    {list.title === "Home" ? (
+      <IoMdHome className="transition duration-75 xl:-translate-x-[2.5px] xl:w-[26.5px] xl:h-[26.5px] max-xl:w-[30.5px] max-xl:h-[30.5px] max-xl:group-hover:scale-105" />
+    ) : (
+      list.icon && (
+        <list.icon className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
+      )
+    )}
+  </>
+);
 
 export default Sidebar;
