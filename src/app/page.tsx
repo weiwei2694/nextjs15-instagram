@@ -1,5 +1,6 @@
 import Main from "@/components/main";
 import Navbar from "@/components/navbar";
+import Navbot from "@/components/navbot";
 import Sidebar from "@/components/sidebar";
 import Sideright from "@/components/sideright";
 
@@ -17,6 +18,9 @@ const Page = () => {
 
         {/* max-[1160px]:hidden */}
         <Sideright />
+
+        {/* max-md:block/inline */}
+        <Navbot />
       </div>
     </main>
   );
