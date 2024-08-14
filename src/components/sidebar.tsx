@@ -2,6 +2,7 @@ import { sidebarLists, TSidebarList } from "@/data";
 import { FaThreads } from "react-icons/fa6";
 import { Instagram, Menu } from "lucide-react";
 import { IoMdHome } from "react-icons/io";
+import Badge from "./ui/badge";
 
 const Sidebar = () => {
   return (
@@ -32,13 +33,6 @@ const Sidebar = () => {
               >
                 <DisplayIcon list={list} />
 
-                {list.img && (
-                  <img
-                    src={list.img}
-                    alt="profile"
-                    className="object-cover rounded-full xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:rounded-full max-xl:group-hover:scale-105 max-xl:transition max-xl:duration-75"
-                  />
-                )}
                 <span
                   className={`max-xl:hidden text-base ${
                     list.active ? "font-bold" : "font-light"
@@ -53,7 +47,11 @@ const Sidebar = () => {
 
         <ul className="flex flex-col space-y-2">
           <li className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group">
-            <FaThreads className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
+            <div className="relative">
+              <Badge total={2} />
+
+              <FaThreads className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
+            </div>
             <span className="max-xl:hidden text-base font-light">Threads</span>
           </li>
           <li className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group">
@@ -67,7 +65,10 @@ const Sidebar = () => {
 };
 
 const DisplayIcon = ({ list }: { list: TSidebarList }) => (
-  <>
+  <div className="relative">
+    {/* BADGE */}
+    {list.title === "Messages" ? <Badge total={123} /> : null}
+
     {list.title === "Home" ? (
       <IoMdHome className="transition duration-75 xl:-translate-x-[2.5px] xl:w-[26.5px] xl:h-[26.5px] max-xl:w-[30.5px] max-xl:h-[30.5px] max-xl:group-hover:scale-105" />
     ) : (
@@ -75,7 +76,15 @@ const DisplayIcon = ({ list }: { list: TSidebarList }) => (
         <list.icon className="transition duration-75 xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:group-hover:scale-105" />
       )
     )}
-  </>
+
+    {list.img && (
+      <img
+        src={list.img}
+        alt="profile"
+        className="object-cover rounded-full xl:w-[22px] xl:h-[22px] max-xl:w-[24px] max-xl:h-[24px] max-xl:rounded-full max-xl:group-hover:scale-105 max-xl:transition max-xl:duration-75"
+      />
+    )}
+  </div>
 );
 
 export default Sidebar;
