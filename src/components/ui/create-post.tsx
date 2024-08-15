@@ -3,9 +3,7 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { FileVideo, Image } from "lucide-react";
@@ -22,15 +20,15 @@ const CreatePost = ({ children }: { children: React.ReactNode }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="min-w-[348px] min-h-[391px] max-w-[855px] max-height-[898px] p-0 bg-[#262626]">
-        <DialogHeader>
+      <DialogContent className="h-full min-w-[348px] min-h-[391px] max-w-[75vw] lg:max-w-[737px] max-h-[75vh] p-0 bg-[#262626]">
+        <DialogHeader className="h-full">
           <div className="h-[43px] border-b border-gray-200/20 grid place-items-center">
             <h4 className="text-[#f5f5f5] text-base font-semibold">
               Create new post
             </h4>
           </div>
 
-          <div className="h-[734px] flex items-center justify-center">
+          <div className="h-full flex items-center justify-center">
             <div className="flex flex-col items-center gap-y-6">
               <div className="relative">
                 <Image className="w-16 h-16 -rotate-6 -translate-x-4 translate-y-10" />
@@ -53,7 +51,7 @@ const CreatePost = ({ children }: { children: React.ReactNode }) => {
                   <button
                     type="button"
                     onClick={handleButtonClick}
-                    className="bg-[#0095f6] text-white py-[7px] px-4 rounded-lg text-sm"
+                    className="bg-[#0095f6] text-white py-[7px] px-4 rounded-lg text-sm border-none outline-none hover:bg-[#0095f6]/90 transition duration-75"
                   >
                     Select from computer
                   </button>
