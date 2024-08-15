@@ -67,3 +67,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+.scroll-hidden {
+  overflow-x: scroll;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* CSS untuk menyembunyikan scrollbar di Firefox */
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* CSS untuk menyembunyikan scrollbar di Edge, IE */
+.scroll-hidden {
+  -ms-overflow-style: none; /* IE 10+ */
+}
