@@ -3,6 +3,7 @@ import { FaThreads } from "react-icons/fa6";
 import { Instagram, Menu } from "lucide-react";
 import Badge from "./ui/badge";
 import DisplayIcon from "./ui/display-icon";
+import CreatePost from "./ui/create-post";
 
 const Sidebar = () => {
   return (
@@ -26,22 +27,38 @@ const Sidebar = () => {
           </div>
 
           <ul className="flex flex-col max-xl:space-y-4">
-            {sidebarLists.map((list, listIndex) => (
-              <li
-                key={listIndex}
-                className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group"
-              >
-                <DisplayIcon list={list} />
+            {sidebarLists.map((list, listIndex) => {
+              if (list.title === "Create") {
+                return (
+                  <CreatePost key={listIndex}>
+                    <li className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group">
+                      <DisplayIcon list={list} />
 
-                <span
-                  className={`max-xl:hidden text-base ${
-                    list.active ? "font-bold" : "font-light"
-                  } ${list.title === "Home" ? "-translate-x-[2.8px]" : ""}`}
+                      <span className="max-xl:hidden text-base font-light">
+                        {list.title}
+                      </span>
+                    </li>
+                  </CreatePost>
+                );
+              }
+
+              return (
+                <li
+                  key={listIndex}
+                  className="flex items-center xl:my-1 xl:gap-3 xl:p-3 rounded-lg hover:bg-gray-200/10 cursor-pointer transition max-xl:p-2 max-xl:justify-center group"
                 >
-                  {list.title}
-                </span>
-              </li>
-            ))}
+                  <DisplayIcon list={list} />
+
+                  <span
+                    className={`max-xl:hidden text-base ${
+                      list.active ? "font-bold" : "font-light"
+                    } ${list.title === "Home" ? "-translate-x-[2.8px]" : ""}`}
+                  >
+                    {list.title}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
