@@ -7,7 +7,7 @@ If you are looking to create an Instagram clone, this project can be a very usef
 ## Check Out Instagram UI Project Preview 2024
 I am pleased to present a preview of the latest UI project inspired by Instagram version 2024. This project showcases the design and elements of the Instagram homepage sliced ​​in detail, although not all Instagram features are covered.
 
-### Apa yang bisa kamu lihat:
+### What can you see:
 - **Home Page Design**: Enjoy the new look and feel of the Instagram homepage.
 - **Fully Responsive**: Display content responsively across screen sizes, from desktop to mobile devices.
 
